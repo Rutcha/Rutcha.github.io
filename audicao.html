@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Teste Auditivo Caseiro</title>
+<meta name="application-name" content="Teste Auditivo Caseiro"/>
+
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="last_modified" content="aug 19, 2019">
+
+<!-- SEO -->
+<meta name="description" content="Simples Teste Caseiro de Audição. Deve prover alguma informação parcial se usado pelo deficiente auditivo com ajuda de um parente ou amigo."> 
+<meta name="keywords" content="Audição, Perda, Teste Auditivo, Frequências">
+<meta name="author" content="Marcelo Teixeira Ruggeri">
+<link rel="copyright" href="copyright.html">
+<meta name="contact" content="mrutcha at g mail; insta: @MRutcha">
+<link rel="author" href="https://plus.google.com/+MarceloTeixeiraRuggeri">
+<link type="text/plain" rel="author" href="humans.html" />
+<link rel="me" type="text/html" href="https://plus.google.com/+MarceloTeixeiraRuggeri">
+<link rel="twitter" href="https://twitter.com/MtRutcha">
+<link rel="publisher" href="https://www.facebook.com/M.T.Ruggeri/">
+<meta name="copyright" content="Marcelo Teixeira Ruggeri - all rights reserved">
+
+
+<!-- UX -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Social share -->
+<meta property="og:title" content="Simples Teste Caseiro de Audição.">
+<meta property="og:image" content="indexThumb.jpg">
+<meta property="og:description" content="Provê informação parcial sobre a perda de audição, quando usado com ajuda de parente/amigo.">
+<meta property="fb:admins" content="M.T.Ruggeri">
+<meta property="og:type" content="app">
+
+<!-- favicons -->
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!--[if IE]><link rel="SHORTCUT ICON" href="alternateFavicon.ico"/><![endif]--><!-- Internet Explorer-->    
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="favicon-128x128.png" sizes="128x128" />
+<link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+<meta name="msapplication-TileColor" content="#DB8D18" />
+<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+<!-- Robots -->
+<meta property="robots" content="all">
+<meta name="language" content="PT-BR">
+<meta name="coverage" content="Brasil">
+<meta name="distribution" content="Local">
+<meta name="rating" content="General">
+<meta name="target" content="Idosos">
+
+
+
+<style type="text/css">
+	body{ margin-left: 3%; }
+	input{ text-align: center; width: 6em; }
+	span.red{ color: red; }
+	label {margin: 0 2em 0 0;}
+	p { text-indent: 2em; }
+	td, th, .tabela { border-bottom: 0.5px solid;
+		 	 border-left: 0.5px solid;
+		 	 width: 4em; }
+	h1, td, th, footer { text-align: center; }
+</style>
+
+</head>
+<body>
+<article>
+	<h1>Teste de Audição Caseiro Simples</h1>
+		<p>Chame um parente, amigo, vizinho, colega de trabalho, etc. de preferência jovem, mas não demasiado, pois o teste exige sobretudo <b>HONESTIDADE</b> dos participantes, mas também de um ouvido saudável que servirá de <em>medida padrão</em>.</p>
+</article>
+
+<app>
+<h5>
+	Frequência <input type="number" id="freq" value="300" step="20" onchange="playSound()" defaultValue="300" /><label for="hz"> Hz</label>
+		Volume <input type="number" id="vol" min="0.01" value="7" step="0.1" onchange="playSound()" defaultValue="7" /><label for="u.s."> un.som</label>
+	Canal <input type="number" id="channel" value="1" step="1" min="1" max="2" onchange="playSound()" defaultValue="1" /><label for="hz"></label>
+</h5>
+<p>
+	<input type="button" value="On" onclick="playSound()" />
+	<input type="button" value="Off" onclick="oscillator.stop()" />
+</p>
+<app>
+
+<table>
+	<tr><th>Freq: </th><td>300</td><td>720</td><td>1440</td><td>2660</td><td>3880</td></tr>
+	<tr><th>Jovem: </th><td><input type="number" class="tabela" step="0.1" min="0.1" value="5"></td><td><input type="number" class="tabela" step="0.1" min="0.1" value="5"></td><td><input type="number" class="tabela" step="0.1" min="0.1" value="5"></td><td><input type="number" class="tabela" step="0.1" min="0.1" value="5"></td><td><input type="number" class="tabela" step="0.1" min="0.1" value="5"></td></tr>
+	<tr><th>Idoso: </th><td><input type="number" class="tabela" step="0.1" min="0.1" value="5"></td><td><input type="number" class="tabela" step="0.1" min="0.1" value="5"></td><td><input type="number" class="tabela" step="0.1" min="0.1" value="5"></td><td><input type="number" class="tabela" step="0.1" min="0.1" value="5"></td><td><input type="number" class="tabela" step="0.1" min="0.1" value="5"></td></tr>
+</table>
+
+<article>
+	<h3>Introdução</h3>
+	<p>A audição é perdida de maneira não uniforme, isto é, há certos sons que ficam piores de se ouvir do que outros. Neste momento, não entrarei nos porquês, apenas nas consequências.</p>
+	<p>As principais dificuldades surgem no <em>ataque</em>, justamente nas variações mais abruptas do som ou ditas altas frequências. Logo, sons mais constantes e graves como um vento  ou uma <strong>vogal</strong> mantêm-se tais quais sempre foram ouvidos, só <strong>consoantes</strong>, zunidos, etc. mais agudos vão sofrendo mudanças ao longa da vida auricular.</p>
+	
+	<h3>Execução</h3>
+	<p>Senta-te ao lado do jovem, em frente ao celular/computador, eqüidistantes da fonte sonora. Dá preferência a um aparelho com bom som, som cristalino, como o de um alto-falante grande ou home theater, de marca, etc. Tamanho é grosseiramente documento, neste caso; porém melhor apresentarei todos os eventuais problema ao fim.</p>
+	<p>Toquem no ON e aumentem o volume até começar a ouvir um apito (o volume está com uma medida abstrata <em>unidades de som</em> pois não está propriamente calibrado, contudo a frequência está milimetricamente exata, já que esta é uma característica dos equipamentos eletrônicos). Pronto! Agora é aumentar a frequência e ajustar o som até ser minimamente ouvido novamente, assim em diante.</p>
+	<p>A cada incremento de frequência, se dará um impasse - o jovem começará a ouvir o apito num volume menor que o do sujeito sob teste,<em> um provável idoso</em> e assim doravante chamado, que pedirá então para aumentar o volume. Caso os dois acompanhem parelhos o passo a passo de aumentar frequência, ajustar volume até o limiar audível, aumentar a frequência de novo e assim sucessivamente, não há suspeita de perda de audição.</p>
+	<p>Contudo se, à medida que os Hz aumentam, cada vez for necessário uma maior diferência entre o volume que o jovem já começa a ouvir o apito e aquele que o idoso pede para colocar, há uma forte suspeita de perda auditiva.</p>
+
+	<h3>Passo a passo detalhado</h3>
+	<p>Aperte ON.
+		<br><strong>Cuidado</strong> que alguns apitos são chatos, incomodam; pois então deves variar aos poucos o volume.
+		<br>O jovem ouviu algo? Não: aumenta o volume até ouvir.
+		<br>O jovem ouviu algo? Sim: abaixa o volume até ouvir o mínimo. Anota o valor (na tabela acima ou num papel)
+		<br>O idoso ouviu algo? Não: mal sinal; aumenta o volume o volume até ele também ouvir.
+		<br>O idoso ouviu algo? Sim: anota o valor e aumenta a frequência.
+		<br>Qual frequência ? Aquelas anotadas na tabela são um bom sinal, mas podes experimentar intermediárias também. Frequências muito abaixo do menor valor na tabela ou muito acima do maior provavelmente não serão suportadas pelo teu alto-falante.
+		<br>Ignora a terceira variável: Canal.
+	</p>
+</article>
+
+<article>
+	<h3>Conclusão</h3>
+	<p>Nenhum resultado de teste em aparelho descalibrado, como o são os encontrados em casa, ainda que supervisionado por um profissional servirá de base para conclusão alguma, mas pode ser mais um indicador que de que o ouvido precisa ser melhor investigado.</p>
+</article>
+
+<article>
+	<h3>Desdobramentos</h3>
+	<p>A terceira variável "Canal" é cada saída independete de som. Usualmente são duas - esquerda (1) e direita (2). Todavia há home theaters no mercado com até 7 saída independetes, onde cada uma pode ser testada por vez variando de 1 até o limite de canais, seja ele 2 até 7 comumente.</p>
+	<p>Como usar o teste com fones de ouvido ? Pois, até é melhor, ainda que menos prático. Testa-se uma orelha por vez, digamos, a direita. Dá-se o fone esquerdo ao jovem e o direito ao idoso. Dois fones, duas pessoas, quatro orelhas, mas apenas as direitas de cada um com fone. Então, se inicia o teste pelo canal 1, o do jovem até ele ouvir, depois se passa ao canal 2 do idoso e se continua, pois o volume e frequência será o mesmo seja qual for o fone.</p>	
+	<p></p>
+</article>
+<footer>
+    <h4>
+    <section itemscope itemtype="http://schema.org/Person">	
+	<span itemprop="name">Marcelo</span>
+	<span itemprop="jobTitle">Aux. Adm.</span> em
+	<span itemprop="affiliation">Feluc</span>
+	<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">		
+		<span itemprop="addressLocality">Pelotas</span> -
+		<span itemprop="addressRegion">Rio Grande do Sul</span>,	
+		<span itemprop="addressCountry">Brasil</span>	
+	</section>
+	</h4>
+</footer>
+</body>
+<script type="text/javascript">
+var audioCtx = new AudioContext, 
+ mergerNode = audioCtx.createChannelMerger(audioCtx.destination.maxChannelCount),
+ silence = [],
+ oscillator,
+ gain = audioCtx.createGain()
+
+for (var q = 0; q < audioCtx.destination.maxChannelCount; q++)
+	silence[q] = audioCtx.createBufferSource()
+
+mergerNode.connect(audioCtx.destination)
+
+console.log("We've got "+ audioCtx.destination.channelCount + " sound channels.") 
+//Menu
+document.getElementById('channel').setAttribute("max", (audioCtx.destination.maxChannelCount).toString())
+
+
+function playSound() {
+	if(oscillator)
+		oscillator.stop()
+	oscillator = audioCtx.createOscillator()
+	oscillator.frequency.value = document.getElementById('freq').value
+	for(var q = 0; q < audioCtx.maxChannelCount; q++)
+		if(q != document.getElementById('channel').value -1)
+			silence[q].connect(mergerNode, 0, q)		
+
+	gain.gain.value = Math.pow(10, document.getElementById('vol').value -7)
+	oscillator.connect(gain)
+	gain.connect(mergerNode, 0, document.getElementById('channel').value -1)
+	oscillator.start()
+}
+
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

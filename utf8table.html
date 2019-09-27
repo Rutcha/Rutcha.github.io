@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>UTF-8 Table</title>
+	<style type="text/css">
+		html { text-align: center; }
+		td {
+			border-bottom: 0.5px solid;
+			border-left: 0.5px solid;			
+		}
+		td, input { width: 4em; }
+
+	</style>
+</head>
+<body>
+	<article>
+		<h1>UTF-8 Table</h1>	
+		<article>
+			<p>Number of Rows <input type="number" name="nows" placeholder="5" onchange="updateRows()" value="5"></p>
+		</article>
+		<table>
+			<tr>
+				<th>nº</th><th>utf-8 equiv.</th><th></th><th>nº</th><th>utf-8 equiv.</th><th></th><th>nº</th><th>utf-8 equiv.</th><th></th><th>nº</th><th>utf-8 equiv.</th><th></th><th>nº</th><th>utf-8 equiv.</th>
+			</tr>			
+		</table>
+	</article>
+
+
+<footer>
+    <h4>
+    <section itemscope itemtype="http://schema.org/Person">	
+	<span itemprop="name">Marcelo</span>
+	<span itemprop="jobTitle">Aux. Adm.</span> em
+	<span itemprop="affiliation">Feluc</span>
+	<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">		
+		<span itemprop="addressLocality">Pelotas</span> -
+		<span itemprop="addressRegion">Rio Grande do Sul</span>,	
+		<span itemprop="addressCountry">Brasil</span>	
+	</section>
+	</h4>
+</footer>	
+</body>
+<script type="text/javascript">
+	var table = document.getElementsByTagName('table')[0]
+	createTable(5)
+
+	function updateRows(){
+		table.innerHTML = "<tr><th>nº</th><th>utf-8 equiv.</th><th></th><th>nº</th><th>utf-8 equiv.</th><th></th><th>nº</th><th>utf-8 equiv.</th><th></th><th>nº</th><th>utf-8 equiv.</th><th></th><th>nº</th><th>utf-8 equiv.</th></tr>"
+		createTable(document.getElementsByTagName('input')[0].value)
+	}
+
+	function createTable(nRows){
+		for(var x = 0; x < 63; x++){ //65535
+		var row = table.insertRow(x+1)
+		for (var y = 0; y < nRows; y++)
+			var number = row.insertCell(1)
+			var utf = row.insertCell(1)
+				number.innerHTML = x
+				utf.innerHTML = String.fromCharCode(x)
+		}
+	}	
+</script>
+</html>
